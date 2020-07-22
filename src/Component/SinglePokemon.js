@@ -31,7 +31,11 @@ const SinglePokemon = (props) => {
       <Fragment>
         <div className="single_pbackground">
           <Container fluid>
-            <Link to="/">Go Back</Link>
+            <Link to="/" className="goback">
+              <img src="https://img.icons8.com/ios-glyphs/30/000000/circled-left-2.png" />{" "}
+              Go Back
+            </Link>
+
             <div className="single_card">
               <Row lg={2} md={1} sm={1}>
                 <Col className="d-flex">

@@ -8,7 +8,7 @@ import {
 
 export const fetchPokemons = () => async (dispatch) => {
   try {
-    const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=50");
+    const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=40");
     const data = res.data;
 
     dispatch({ type: FETCH_POKEMON, payload: data });
@@ -23,7 +23,7 @@ export const fetchPokemons = () => async (dispatch) => {
 export const searchPokemons = (keyword) => async (dispatch) => {
   if (keyword == "" || keyword.length == 0) {
     try {
-      const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=50");
+      const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=40");
       const data = res.data;
 
       dispatch({ type: FETCH_POKEMON, payload: data });
@@ -35,7 +35,7 @@ export const searchPokemons = (keyword) => async (dispatch) => {
     }
   } else {
     try {
-      const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=50");
+      const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=40");
       const data = res.data;
       dispatch({ type: FETCH_POKEMON, payload: data });
 

@@ -23,3 +23,7 @@
   justify-content: center;
   flex-direction: column;
 }
+.goback {
+  padding: 7px 7px;
+  margin-left: 10px;
+}
