@@ -1,0 +1,4 @@
+export const FETCH_POKEMON = "FETCH_POKEMON";
+export const FETCH_ERROR = "FETCH_ERROR";
+export const SEARCH_POKEMON = "SEARCH_POKEMON";
+export const SEARCH_ERROR = "SEARCH_ERROR";

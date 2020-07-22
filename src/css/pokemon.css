@@ -1,0 +1,5 @@
+.pokemon_background {
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
