@@ -34,14 +34,12 @@ const PokemonsData = ({
     <Fragment>
       <div className="pokemon_background">
         <Container fluid="md">
-          <Row>
-            <Col>
-              <InputGroup
-                className="mb-4 mx-auto mt-3"
-                style={{ width: "600px" }}>
+          <Row className="justify-content-center">
+            <Col xs={12} sm={12} md={8} lg={6}>
+              <InputGroup className="mb-4 mx-auto mt-3">
                 <InputGroup.Prepend>
                   <InputGroup.Text id="inputGroup-sizing-default">
-                    Search Pokemon by Name
+                    Search Pokemon
                   </InputGroup.Text>
                 </InputGroup.Prepend>
                 <FormControl
@@ -65,7 +63,7 @@ const PokemonsData = ({
               </h5>
             </div>
           ) : (
-            <Row lg={3} md={2} sm={1}>
+            <Row lg={3} md={2} sm={1} xs={1}>
               {pokemons.map((pokemon) => (
                 <Col key={pokemon.name}>
                   <PokemonCard className="" pokemon={pokemon} />

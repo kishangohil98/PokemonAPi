@@ -37,7 +37,7 @@ const SinglePokemon = (props) => {
             </Link>
 
             <div className="single_card">
-              <Row lg={2} md={1} sm={1}>
+              <Row lg={2} md={1} sm={1} xs={1}>
                 <Col className="d-flex">
                   <Image
                     src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pdata.order}.png`}
