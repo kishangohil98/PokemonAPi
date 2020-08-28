@@ -7,13 +7,14 @@ import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import Spinner from "../Component/Spinner";
 import Badge from "react-bootstrap/Badge";
-import { Link } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 const SinglePokemon = (props) => {
   const [url, setUrl] = useState(props.location.pokemonUrl);
   //const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/1/");
-
   const [pdata, setPdata] = useState({});
+
+  const history = useHistory();
 
   useEffect(() => {
     setUrl(props.location.pokemonUrl);
@@ -22,28 +23,36 @@ const SinglePokemon = (props) => {
       const res = await axios.get(url);
       const data = res.data;
       await setPdata(data);
+      console.log("Function complete");
     }
-    pokemonDetail(url);
+
+    //console.log(props.location.pokemonUrl);
+    if (props.location.pokemonUrl) {
+      pokemonDetail(url);
+    } else {
+      console.log("else condition called");
+      history.push("/");
+    }
   }, []);
 
   {
     return pdata.name ? (
       <Fragment>
         <div className="single_pbackground">
-          <Container fluid>
+          <Container>
             <Link to="/" className="goback">
               <img src="https://img.icons8.com/ios-glyphs/30/000000/circled-left-2.png" />{" "}
               Go Back
             </Link>
 
-            <div className="single_card">
+            <div className="single_card mt-2">
               <Row lg={2} md={1} sm={1} xs={1}>
-                <Col className="d-flex">
+                <Col className="d-flex justify-content-center">
                   <Image
                     src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pdata.order}.png`}
                     roundedCircle
                     width="500px"
-                    className="poke_Img"
+                    //className="poke_Img"
                   />
                 </Col>
                 <Col>
@@ -58,10 +67,10 @@ const SinglePokemon = (props) => {
                       ))}
                     </h6>
                     <p>
-                      Weight: <strong>{pdata.weight}</strong>
+                      Weight: <strong>{pdata.weight}</strong> Kg
                     </p>
                     <p>
-                      Height: <strong>{pdata.height}</strong>
+                      Height: <strong>{pdata.height}</strong> Unit
                     </p>
                   </div>
                 </Col>

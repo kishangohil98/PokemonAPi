@@ -19,7 +19,7 @@ const PokemonsData = ({
   const [searchword, setsearchword] = useState("");
 
   const searchChange = (e) => {
-    searchPokemons(e.target.value);
+    searchPokemons(e.target.value.toLowerCase());
 
     setsearchword(e.target.value);
   };
